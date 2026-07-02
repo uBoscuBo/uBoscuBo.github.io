@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Projects
-permalink: /projects
+permalink: /projects/
 description: A collection of research projects, tools, and software in chemical engineering, controls, and computer science.
 ---
 

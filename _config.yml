@@ -10,7 +10,7 @@ subtitle: "Chemical Engineering // Computer Science "
 description: >-
   Portfolio of Ayub Ilyas Lakhani — CS & ChE researcher specializing in computational
   methods, machine learning, and process simulation.
-url: "https://yourusername.github.io"
+url: "https://uboscubo.github.io"
 baseurl: ""
 
 # ---
@@ -58,10 +58,10 @@ hero:
   tagline: "I build things at the intersection of code and chemistry."
   cta_primary:
     label: "View Projects"
-    url: "/projects/"
+    url: "/projects.html"
   cta_secondary:
     label: "About Me"
-    url: "/about/"
+    url: "/about.html"
 
 # ---
 # Collections
@@ -81,7 +81,6 @@ defaults:
 # ---
 # Build Settings
 # ---
-permalink: pretty
 markdown: kramdown
 highlighter: rouge
 plugins:

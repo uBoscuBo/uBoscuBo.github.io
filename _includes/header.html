@@ -1,0 +1,35 @@
+<nav class="site-nav" role="navigation" aria-label="Main navigation">
+  <a class="site-nav__logo" href="{{ '/' | relative_url }}" aria-label="{{ site.author.name }} — home">
+    <span class="prompt">&gt; </span>{{ site.author.name | split: " " | first | downcase }}<span class="accent">_</span>{{ site.author.name | split: " " | last | downcase }}<span class="accent"></span>
+  </a>
+
+  <button class="site-nav__hamburger" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+
+  <ul class="site-nav__links" id="nav-links" role="list">
+    {% for link in site.nav_links %}
+    <li>
+      <a href="{{ link.url | relative_url }}"{% if page.url == link.url %} class="active" aria-current="page"{% endif %}>
+        {{ link.title }}
+      </a>
+    </li>
+    {% endfor %}
+    {% if site.author.resume %}
+    <li>
+      <a href="{{ site.author.resume | relative_url }}" class="btn btn--ghost btn--sm" target="_blank" rel="noopener">
+        Resume ↗
+      </a>
+    </li>
+    {% endif %}
+  </ul>
+</nav>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const links  = document.getElementById('nav-links');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+</script>

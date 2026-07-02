@@ -1,0 +1,42 @@
+# Skills — organized by category
+# Each skill has a name and optional level (0–100) shown as a progress bar
+
+- category: "Programming Languages (Stack)"
+  icon: "terminal"
+  skills:
+    - { name: "Python",     level: 95 }
+    - { name: "C/C++",      level: 70 }
+    - { name: "Golang",     level: 60 }
+    - { name: "MATLAB",     level: 80 }
+    - { name: "SQL",        level: 75 }
+    - { name: "Typescript", level: 70 }
+
+- category: "ML & Data Science"
+  icon: "chart"
+  skills:
+    - { name: "PyTorch",                 level: 90 }
+    - { name: "Reinforcement Learning",  level: 85 }
+    - { name: "NumPy / SciPy",           level: 95 }
+    - { name: "Pandas",                  level: 90 }
+    - { name: "Anomaly Detection",       level: 80 }
+    - { name: "Physics Informed NN",     level: 80 }
+
+- category: "Chemical Engineering"
+  icon: "flask"
+  skills:
+    - { name: "Process Simulation",  level: 80 }
+    - { name: "Reaction Engineering",level: 85 }
+    - { name: "Process Control",     level: 80 }
+    - { name: "Aspen Plus / HYSYS",  level: 75 }
+    - { name: "DeltaV",              level: 70 }
+    - { name: "OPC UA",              level: 80 }
+
+- category: "Tools & Infrastructure"
+  icon: "tools"
+  skills:
+    - { name: "Git / GitHub", level: 80 }
+    - { name: "Docker",       level: 80 }
+    - { name: "Linux / Bash", level: 80 }
+    - { name: "LaTeX",        level: 85 }
+    - { name: "Kubernetes",   level: 75 }
+    - { name: "Azure Cloud",  level: 70 }

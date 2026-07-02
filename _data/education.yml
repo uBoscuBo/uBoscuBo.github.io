@@ -1,0 +1,27 @@
+# Education — edit/add entries below
+# Fields: degree, school, location, start, end, gpa, honors, thesis, description
+
+- degree: "M.S. Computer Science"
+  school: "Rice University"
+  location: "Houston, Texas"
+  start: "2024"
+  end: "2027"
+  description: >-
+    Focused on System Systems Software and Cybersecurity
+
+- degree: "M.S. Chemical Engineering"
+  school: "Texas Tech University"
+  location: "Lubbock, Texas"
+  start: "2021"
+  end: "2022"
+  description: >-
+    Focus on Reinforcement Learning for Process Control and Optimization.
+    Publication: "Lakhani, A. I., Chowdhury, M. A., & Lu, Q. (2021). Stability-Preserving Automatic Tuning of PID Control with Reinforcement Learning. arXiv e-prints, arXiv-2112.".
+
+- degree: "B.S. Chemical Engineering"
+  school: "Texas Tech University"
+  location: "Lubbock, Texas"
+  start: "2015"
+  end: "2019"
+  description: >-
+    Minor in Chemistry and Mathematics. Focus on Process Simulation and Optimization.

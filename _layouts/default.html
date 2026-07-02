@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body>
+  <div class="page-wrapper">
+    {% include header.html %}
+    <main class="main-content" id="main-content">
+      {{ content }}
+    </main>
+    {% include footer.html %}
+  </div>
+
+  <script>
+    // Animate skill bars when they scroll into view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.skill-card__bar-fill').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

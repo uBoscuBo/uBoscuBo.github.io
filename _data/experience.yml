@@ -1,0 +1,41 @@
+# Work experience — edit/add entries below
+# Fields: title, company, location, start, end, description, highlights (list), tags (list)
+
+- title: "Applied Research Engineer"
+  company: "Emerson Automation Solutions"
+  location: "Austin, Texas"
+  start: "2023"
+  end: "Present"
+  description: >-
+    I'm an Applied Research Engineer focused on researching and developing next-generation controls software for the process industry — bridging 
+    cutting-edge research with practical tools that improve how industrial processes are monitored, optimized, and automated.
+  highlights:
+    - Provided industrial subject-matter expertise to UT J.J Pickle Research Campus, enabling the successful configuration and commissioning of their DCS system for autonomous control research initiatives
+    - Programmed a reinforcement learning algorithm to self-tune a Temperature PID Controller (TCLab) using PyTorch infrastructure
+    - Implemented a prototype to allow embedded devices (Beagle Bone Board) to send sensory data to Azure IoT Hub (PaaS)
+  tags: [Python, PyTorch, DeltaV, PID, Aspen Plus, Embedded Systems, Azure IoT Hub]
+
+- title: "Process Transformation Engineer"
+  company: "Invista Company"
+  location: "Victoria, Texas"
+  start: "2022"
+  end: "2023"
+  description: >-
+    I develop data-driven models using process data to identify early signs of equipment fouling. This work supports operational integrity and helps teams move from reactive to proactive maintenance planning.
+  highlights:
+    - Developed an anomaly detection script using an LSTM-Autoencoder algorithm using Seeq and Pytorch infrastructure
+    - Engineered a model to determine the decay rate of catalyst activity and heat exchanger fouling
+    - Incorporated forecasting algorithms using Prophet or LSTM to determine predictive maintenance
+  tags: [LSTM, Autoencoder, Seeq, Python, PyTorch, Process Data Analytics]
+
+- title: "Project Engineer"
+  company: "Solugen, Inc."
+  location: "Houston, Texas"    
+  start: "2019"
+  end: "2020"
+  description: >-
+    I worked as a Project Engineer helping develop and execute projects at Solugen's new manufacturing plant in Slaton, TX — supporting the buildout from early planning through execution.
+  highlights:
+    - Led the commission of Solugen’s Slaton facility to receive 34% and 50% hydrogen peroxide by rail
+    - Constructed a Quality Assurance/Quality Control laboratory with a budget of $40,000; ensured outgoing product specifications met customer expectations
+  tags: [Waterfall, Agile, Project Management, Process Engineering, Chemical Engineering, Compliance, Quality Assurance, Quality Control]

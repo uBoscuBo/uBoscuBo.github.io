@@ -1,0 +1,518 @@
+// ── Nav ───────────────────────────────────────────────────
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  height: $nav-height;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  background: rgba($bg-dark, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba($border-color, 0.8);
+
+  &__logo {
+    font-family: $font-mono;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $accent-teal;
+    letter-spacing: -0.02em;
+
+    .prompt { opacity: 0.45; }
+  }
+
+  &__links {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+
+    a {
+      color: $text-secondary;
+      font-size: 0.875rem;
+      font-weight: 500;
+      padding: 0.4rem 0.75rem;
+      border-radius: $radius-sm;
+      transition: $t-fast;
+
+      &:hover { color: $text-primary; background: rgba($accent-teal, 0.08); }
+      &.active { color: $accent-teal; }
+    }
+  }
+
+  &__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    margin-left: auto;
+    padding: 4px;
+
+    span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: $text-secondary;
+      border-radius: 2px;
+      transition: $t-fast;
+    }
+  }
+
+  @media (max-width: 640px) {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.75rem 1.25rem;
+
+    &__hamburger { display: flex; }
+
+    &__links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      gap: 0;
+      margin-top: 0.5rem;
+      padding-bottom: 0.75rem;
+
+      &.open { display: flex; }
+
+      a { padding: 0.6rem 0.5rem; width: 100%; }
+    }
+  }
+}
+
+// ── Page Wrapper ──────────────────────────────────────────
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: $nav-height;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+// ── Hero Section ──────────────────────────────────────────
+.hero {
+  min-height: calc(100vh - $nav-height);
+  display: flex;
+  align-items: center;
+  padding: 4rem 1.5rem;
+
+  &__inner {
+    max-width: $max-width;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  &__greeting {
+    font-family: $font-mono;
+    font-size: 1rem;
+    color: $accent-teal;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+  }
+
+  &__name {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+  }
+
+  &__title {
+    font-family: $font-mono;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: $text-secondary;
+    margin-bottom: 1.5rem;
+
+    .sep { color: $accent-teal; margin: 0 0.5rem; }
+  }
+
+  &__bio {
+    font-size: 1.05rem;
+    color: $text-secondary;
+    max-width: 520px;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+  }
+
+  &__social {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    a {
+      color: $text-muted;
+      transition: $t-fast;
+      display: flex;
+      align-items: center;
+
+      &:hover { color: $accent-teal; transform: translateY(-2px); }
+    }
+
+    svg { width: 20px; height: 20px; }
+  }
+
+  &__photo-wrap {
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  &__photo-hex {
+    position: relative;
+    width: 320px;
+    height: 320px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      background: linear-gradient(135deg, $accent-teal, $accent-blue, $accent-purple);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      z-index: 0;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      position: relative;
+      z-index: 1;
+      filter: grayscale(10%);
+      transition: filter 0.3s ease;
+
+      &:hover { filter: grayscale(0%); }
+    }
+
+    .no-photo {
+      width: 100%;
+      height: 100%;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      background: $bg-card;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+
+      svg { width: 80px; height: 80px; color: $text-muted; }
+    }
+  }
+
+  @media (max-width: 768px) {
+    &__inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    &__photo-wrap { order: -1; margin: 0 auto; }
+
+    &__actions { justify-content: center; }
+
+    &__social { justify-content: center; }
+
+    &__bio { max-width: 100%; }
+  }
+}
+
+// ── Section ───────────────────────────────────────────────
+.section {
+  padding: $section-gap 1.5rem;
+
+  &__header {
+    margin-bottom: 3rem;
+
+    .section__label {
+      font-family: $font-mono;
+      font-size: 0.8rem;
+      color: $accent-teal;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      color: $text-secondary;
+      max-width: 560px;
+    }
+  }
+}
+
+// ── Projects Grid ─────────────────────────────────────────
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+// ── Timeline ──────────────────────────────────────────────
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 8px;
+    bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, $accent-teal, transparent);
+  }
+
+  &__item {
+    position: relative;
+    margin-bottom: 2.5rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 6px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: $accent-teal;
+      box-shadow: 0 0 12px rgba($accent-teal, 0.6);
+      border: 2px solid $bg-dark;
+    }
+
+    &:last-child { margin-bottom: 0; }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.25rem;
+  }
+
+  &__dates {
+    font-family: $font-mono;
+    font-size: 0.75rem;
+    color: $accent-teal;
+    white-space: nowrap;
+  }
+
+  &__role {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: $text-primary;
+  }
+
+  &__org {
+    color: $text-secondary;
+    font-size: 0.9rem;
+    margin-bottom: 0.1rem;
+  }
+
+  &__location {
+    font-size: 0.8rem;
+    color: $text-muted;
+    font-family: $font-mono;
+    margin-bottom: 0.75rem;
+  }
+
+  &__desc {
+    color: $text-secondary;
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &__highlights {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0.75rem;
+
+    li {
+      font-size: 0.875rem;
+      color: $text-secondary;
+      padding-left: 1rem;
+      margin-bottom: 0.3rem;
+      position: relative;
+
+      &::before {
+        content: '→';
+        position: absolute;
+        left: 0;
+        color: $accent-teal;
+        font-size: 0.75rem;
+      }
+    }
+  }
+
+  &__tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+}
+
+// ── Skills Grid ───────────────────────────────────────────
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+// ── About Layout ──────────────────────────────────────────
+.about-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  align-items: start;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-sidebar {
+  &__photo {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: top;
+    border-radius: $radius-lg;
+    border: 1px solid $border-color;
+    margin-bottom: 1.5rem;
+  }
+
+  &__name {
+    font-size: 1.3rem;
+    margin-bottom: 0.25rem;
+  }
+
+  &__title {
+    font-family: $font-mono;
+    font-size: 0.8rem;
+    color: $accent-teal;
+    margin-bottom: 1rem;
+  }
+
+  &__meta {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: $text-secondary;
+      margin-bottom: 0.5rem;
+
+      svg { color: $accent-teal; flex-shrink: 0; }
+
+      a { color: $text-secondary; &:hover { color: $accent-teal; } }
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+}
+
+// ── Project Detail ────────────────────────────────────────
+.project-detail {
+  &__hero {
+    padding: 3rem 1.5rem 2rem;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 3rem;
+  }
+
+  &__back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    color: $text-muted;
+    margin-bottom: 1.5rem;
+    transition: $t-fast;
+
+    &:hover { color: $accent-teal; }
+  }
+
+  &__tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 1rem 0; }
+
+  &__links { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+
+  &__content {
+    max-width: 780px;
+
+    h2, h3 { margin: 2rem 0 0.75rem; }
+    p { margin-bottom: 1rem; }
+    ul, ol { margin-bottom: 1rem; }
+    img {
+      border-radius: $radius-md;
+      border: 1px solid $border-color;
+      margin: 1.5rem 0;
+    }
+  }
+}
+
+// ── Page Hero ─────────────────────────────────────────────
+.page-hero {
+  padding: 4rem 1.5rem 3rem;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 0;
+
+  .container { max-width: $max-width; margin: 0 auto; }
+
+  &__label {
+    font-family: $font-mono;
+    font-size: 0.8rem;
+    color: $accent-teal;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.5rem;
+  }
+
+  h1 { margin-bottom: 0.75rem; }
+  p  { color: $text-secondary; max-width: 560px; }
+}
+
+// ── Footer ────────────────────────────────────────────────
+.site-footer {
+  padding: 2rem 1.5rem;
+  border-top: 1px solid $border-color;
+  text-align: center;
+
+  p {
+    font-size: 0.8rem;
+    color: $text-muted;
+    font-family: $font-mono;
+
+    a { color: $text-muted; &:hover { color: $accent-teal; } }
+  }
+}

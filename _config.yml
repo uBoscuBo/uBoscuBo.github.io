@@ -46,9 +46,9 @@ nav_links:
   - title: "Home"
     url: "/"
   - title: "Projects"
-    url: "/projects/"
+    url: "/projects.html"
   - title: "About"
-    url: "/about/"
+    url: "/about.html"
 
 # ---
 # Home Page

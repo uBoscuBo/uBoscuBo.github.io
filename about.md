@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About
+title: about
 description: Background, experience, and skills.
 ---
 

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: about
+permalink: /about
 description: Background, experience, and skills.
 ---
 

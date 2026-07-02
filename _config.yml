@@ -81,6 +81,7 @@ defaults:
 # ---
 # Build Settings
 # ---
+permalink: pretty
 markdown: kramdown
 highlighter: rouge
 plugins:
